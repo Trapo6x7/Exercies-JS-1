@@ -34,28 +34,21 @@ window.confirm(
 
 console.log(" ");
 
-let decimal1 = prompt("Donnez moi un nombre a virgule");
-let decimal2 = prompt("Donnez moi un autre nombre a virgule");
+let decimal1 = parseInt(prompt("Donnez moi un nombre a virgule"));
+let decimal2 = parseFloat(prompt("Donnez moi un autre nombre a virgule"));
 
-let num1 = parseInt(decimal1);
-
-let entier1 = Math.round(num1);
-
+let entier1 = Math.trunc(decimal1);
 
 window.alert(entier1 * decimal2);
 
 console.log(" ");
 
-let numero1 = prompt("Donnez moi un nombre");
-let numero2 = prompt("Donnez moi un autre nombre");
+let numero1 = parseInt(prompt("Donnez moi un nombre"));
+let numero2 = parseInt(prompt("Donnez moi un autre nombre"));
 
-let numchange1 = parseInt(numero1);
-let numchange2 = parseInt(numero2);
+import { resteDivision  } from "./script2.js";
 
-let entiergui1 = Math.trunc(numchange1);
-let entiergui2 = Math.trunc(numchange2);
-
-window.alert(entiergui1 % entiergui2);
+window.alert(resteDivision(numero1,numero2));
 
 console.log(" ");
 
@@ -85,16 +78,56 @@ if (numchangeradulte >= 18) {
 
 console.log(" ");
 
-let multiplieur = prompt("Donnez moi un nombre?");
-
-let changerprompt = parseInt(multiplieur);
+let multiplieur = parseInt(prompt("Donnez moi un nombre?"));
 
 function multiplier(a) {
-  for (let i = 1; i < 10; i = i + 1) {
-    return a * i;
+  let resultat ="";
+
+  for (let i = 1; i <= 10; i = i + 1) {
+    resultat += a + " x " + i + " =  "+(a * i)+"\n";
   };
+
+  return resultat;
 };
 
-let resultat = multiplier(changerprompt);
+let resultat = multiplier(multiplieur);
 
 window.alert(resultat);
+
+console.log(" ");
+
+let phrase = prompt("phrase")
+
+for (let i = 0; i < phrase.length ; i++) {
+    console.log(phrase.charAt(i))
+    console.log(" ")
+}
+
+console.log(" ");
+
+let randomNumber = parseInt(prompt("Donnez moi un nombre entre 1 et 10"));
+
+function randomNum(a){
+for (let i=0; i<=10; i += 1){
+  if (a<5){
+    return "Le nombre saisi est inférieur à 5"
+  } else if (a===5){
+    return "Le nombre saisi est égal à 5"
+  } else if (a>5){
+    return "Le nombre saisi est supérieur à 5"
+  };
+}
+};
+
+window.alert(randomNum(randomNumber));
+
+console.log(" ");
+
+function exponentiel(a){
+  return a ** 2
+};
+
+let carreNombre = parseInt(prompt("Donnez moi un nombre"));
+
+window.alert(exponentiel(carreNombre));
+
